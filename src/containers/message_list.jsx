@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Message from './message';
-import getMessages from '../actions';
+import { getMessages } from '../actions';
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(

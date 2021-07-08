@@ -10,7 +10,7 @@ class Message extends Component {
           <p>{this.props.message.content}</p>
         </div>
       </div>
-    )
+    );
   }
 }
 
