@@ -11,7 +11,7 @@ const App = () => {
       </div>
       <div className="right-box" >
         <h2>Channel #General</h2>
-        <div><MessageList /></div>
+        <MessageList />
         <MessageForm />
       </div>
     </div>
