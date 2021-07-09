@@ -20,8 +20,8 @@ class MessageForm extends Component {
     this.setState({ value: event.target.value });
   }
 
-  handleSubmit = ({ currentUser }, { selectedChannel }) => {
-    this.createMessage(selectedChannel, currentUser, this.state.value);
+  handleSubmit = () => {
+    this.props.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
   }
 
   render() {

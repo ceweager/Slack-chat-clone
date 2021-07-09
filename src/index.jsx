@@ -42,7 +42,7 @@ const initialState = {
   ],
   channels: ['general', 'react', 'paris'],
   currentUser: `anonymous${Math.floor(10 + (Math.random() * 90))}`,
-  selectedChannel: 'general'
+  selectedChannel: "general"
 };
 
 // render an instance of the component in the DOM

@@ -20,7 +20,6 @@ class MessageList extends Component {
 
   render() {
     console.log(this.props);
-    console.log(this.state);
     return (
       this.props.messages.map((message) => {
         return <Message key={message.created_at} message={message} />;
