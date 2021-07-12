@@ -15,17 +15,20 @@ import messagesReducer from './reducers/messages_reducer';
 import channelsReducer from './reducers/channels_reducer';
 import currentUserReducer from './reducers/current_user_reducer';
 import selectedChannelReducer from './reducers/selected_channel_reducer';
+import userColorReducer from './reducers/user_color_reducer';
 
 const reducers = combineReducers({
   // changeMe: (state = null, action) => state
   messages: messagesReducer,
   channels: channelsReducer,
   currentUser: currentUserReducer,
-  selectedChannel: selectedChannelReducer
+  selectedChannel: selectedChannelReducer,
+  userColor: userColorReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const middlewares = composeEnhancers(applyMiddleware(reduxPromise, logger));
+
 
 const initialState = {
   messages: [
@@ -42,7 +45,8 @@ const initialState = {
   ],
   channels: ['general', 'react', 'paris'],
   currentUser: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
-  selectedChannel: "general"
+  selectedChannel: "general",
+  userColor: "#" + Math.floor(Math.random() * 16777215).toString(16)
 };
 
 // render an instance of the component in the DOM

@@ -50,7 +50,7 @@ function mapStateToProps(state) {
   console.log("current state", state);
   return {
     messages: state.messages,
-    selectedChannel: state.selectedChannel
+    selectedChannel: state.selectedChannel,
   };
 }
 

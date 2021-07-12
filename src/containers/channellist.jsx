@@ -20,7 +20,6 @@ class ChannelList extends Component {
   }
   render() {
     let classes = "";
-    console.log(this.props.channels);
     return (
       <div>
         <h2>Channels</h2>
@@ -42,7 +41,6 @@ class ChannelList extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     channels: state.channels,
     selectedChannel: state.selectedChannel
