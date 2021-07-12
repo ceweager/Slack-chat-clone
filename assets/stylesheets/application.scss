@@ -5,3 +5,73 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.container{
+  display:flex;
+  width: 320px;
+  height: 480px;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 0;
+  padding-left:20px;
+  background-color: rgb(27, 2, 34);
+  color: rgb(224, 224, 224);
+  h2{
+    font-size: 16px;
+  }
+  h3{
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+  h5{
+    margin-top:0;
+    font-size: 10px;
+  }
+}
+
+.left-box{
+  width: 22%;
+  box-shadow: 10px 0 5px rgba(0,0,0,0.2);
+}
+
+.right-box{
+  width: 75%;
+  padding-left:10px;
+  padding-right: 15px;
+  margin-left: 10px;
+  border-radius:0 20px 20px 0;
+  background-color: rgb(70, 48, 90);
+  h3{
+    margin:0;
+    font-size:12px;
+    padding-top:0;
+  }
+  .message-box{
+    height: 90%;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+
+  .message-style{
+    padding: 5px;
+    margin: 5px auto;
+    box-sizing: border-box;
+    background-color: rgb(35, 1, 44);
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  }
+}
+
+.search-term{
+  background-color: rgb(208, 190, 212);
+  color:rgb(27, 2, 34);
+  margin-right: 4px;
+  border: none;
+  padding: 2px;
+}
+
+.submit-button{
+  background-color: rgb(35, 1, 44);
+  border: 2px solid rgb(35, 1, 44);
+  border-radius: 5px;
+}

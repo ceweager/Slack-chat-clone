@@ -15,11 +15,11 @@ function mapDispatchToProps(dispatch) {
 
 class MessageList extends Component {
   componentWillMount() {
-    this.props.getMessages();
+    this.props.getMessages(this.props.selectedChannel);
   }
 
   componentDidMount() {
-    this.refresher = setInterval(this.props.getMessages(), 2000);
+    this.refresher = setInterval(() => { this.props.getMessages(this.props.selectedChannel); }, 1000);
   }
 
   componentDidUpdate() {
@@ -31,22 +31,26 @@ class MessageList extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
-      <div ref={(list) => { this.list = list; }}>
-        {
-          this.props.messages.map((message) => {
-            return <Message key={message.created_at} message={message} />;
-          })
-        }
-      </div>
+      <div style={{ height: "85%" }}>
+        <h2>Channel #{this.props.selectedChannel}</h2>
+        <div className="message-box" ref={(list) => { this.list = list; }}>
+          {
+            this.props.messages.map((message) => {
+              return <Message key={message.created_at} message={message} />;
+            })
+          }
+        </div>
+      </div >
     );
   }
 }
 
 function mapStateToProps(state) {
+  console.log("current state", state);
   return {
-    messages: state.messages
+    messages: state.messages,
+    selectedChannel: state.selectedChannel
   };
 }
 

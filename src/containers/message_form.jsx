@@ -17,6 +17,7 @@ class MessageForm extends Component {
   }
 
   handleChange = (event) => {
+    event.preventDefault();
     this.setState({ value: event.target.value });
   }
 
@@ -27,8 +28,8 @@ class MessageForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.value} placeholder="Please type your message" onChange={this.handleChange} />
-        <input type="submit" value="Submit" />
+        <input type="text" value={this.state.value} placeholder="Please type your message" onChange={this.handleChange} className="search-term" />
+        <input type="submit" value="Submit" className="submit-button" />
       </form>
     );
   }

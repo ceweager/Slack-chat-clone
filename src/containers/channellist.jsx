@@ -1,20 +1,52 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateSelectedChannel } from '../actions';
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { updateSelectedChannel: updateSelectedChannel },
+    dispatch
+  );
+}
 
 class ChannelList extends Component {
+
+  handleClick = (event) => {
+    event.preventDefault();
+    this.props.updateSelectedChannel(event.target.innerText);
+  }
   render() {
+    let classes = "";
+    console.log(this.props.channels);
     return (
       <div>
-        <h2>Redux Chat</h2>
+        <h2>Channels</h2>
         <div className="Links">
-          <h3>#general</h3>
-          <h3>#react</h3>
-          <h3>#paris</h3>
+          {this.props.channels.map((channel) => {
+            if (this.props.selectedChannel === channel) {
+              classes = "selected";
+            }
+            return (
+              <h3 key={channel} className={classes} onClick={this.handleClick} >
+                {channel}
+              </h3>
+            );
+          })}
         </div>
-      </div>
+      </div >
     );
   }
 }
 
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    channels: state.channels,
+    selectedChannel: state.selectedChannel
+  }
+}
 
-export default ChannelList;
+export default connect(mapStateToProps, mapDispatchToProps)(ChannelList);

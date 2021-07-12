@@ -10,7 +10,6 @@ const App = () => {
         <ChannelList />
       </div>
       <div className="right-box" >
-        <h2>Channel #General</h2>
         <MessageList />
         <MessageForm />
       </div>
