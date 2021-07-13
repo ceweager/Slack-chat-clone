@@ -13,7 +13,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 class ChannelList extends Component {
-
   handleClick = (event) => {
     event.preventDefault();
     this.props.updateSelectedChannel(event.target.innerText);
@@ -27,6 +26,8 @@ class ChannelList extends Component {
           {this.props.channels.map((channel) => {
             if (this.props.selectedChannel === channel) {
               classes = "selected";
+            } else {
+              classes = "";
             }
             return (
               <h3 key={channel} className={classes} onClick={this.handleClick} >
@@ -35,7 +36,7 @@ class ChannelList extends Component {
             );
           })}
         </div>
-      </div >
+      </div>
     );
   }
 }
@@ -44,7 +45,7 @@ function mapStateToProps(state) {
   return {
     channels: state.channels,
     selectedChannel: state.selectedChannel
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChannelList);

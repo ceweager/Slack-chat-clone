@@ -10,7 +10,6 @@ class Message extends Component {
   }
 
   render() {
-    console.log(this.props.userColor);
     return (
       <div className="message-style">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
