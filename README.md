@@ -14,5 +14,4 @@ Overview:
 
 Slack chat clone built using React and Redux.
 
-![image](https://user-images.githubusercontent.com/66081334/125497998-45fe4677-499c-449c-8d4d-4a9ec54d5974.png)
-
+![image](https://user-images.githubusercontent.com/66081334/125498311-59965443-72b3-4517-9653-52f479764523.png)
